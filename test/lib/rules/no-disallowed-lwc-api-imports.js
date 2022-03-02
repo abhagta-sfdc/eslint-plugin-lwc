@@ -23,6 +23,14 @@ const invalidCases = [
         ],
     },
     {
+        code: `import { ShouldNotImport as LightningElement } from "lwc"`,
+        errors: [
+            {
+                message: new RegExp(`Invalid import. ShouldNotImport is not part of the lwc api.`),
+            },
+        ],
+    },
+    {
         code: `import { ShouldNotImport, LightningElement } from "lwc"`,
         errors: [
             {
@@ -64,11 +72,33 @@ const invalidCases = [
         code: `import * as lwc from 'lwc'`,
         errors: [
             {
-                message: new RegExp(`Invalid import. Namespace imports are not allowed on "lwc". Instead, use named imports: "import { LightningElement } from 'lwc'"`)
-            }
-        ]
-    }
-]
+                message: new RegExp(
+                    `Invalid import. Namespace imports are not allowed on "lwc". Instead, use named imports: "import { LightningElement } from 'lwc'".`,
+                ),
+            },
+        ],
+    },
+    {
+        code: `export * from 'lwc'`,
+        errors: [
+            {
+                message: new RegExp(
+                    `Invalid import. Namespace imports are not allowed on "lwc". Instead, use named imports: "import { LightningElement } from 'lwc'".`,
+                ),
+            },
+        ],
+    },
+    {
+        code: `import 'lwc'`,
+        errors: [
+            {
+                message: new RegExp(
+                    `Invalid import. Namespace imports are not allowed on "lwc". Instead, use named imports: "import { LightningElement } from 'lwc'".`,
+                ),
+            },
+        ],
+    },
+];
 
 const validCases = [
     {
@@ -76,7 +106,13 @@ const validCases = [
     },
     {
         code: `import { LightningElement, wire } from "lwc"`,
-    }
+    },
+    {
+        code: `import { LightningElement, wire, api } from "lwc"`,
+    },
+    {
+        code: `import { LightningElement as Yolo } from "lwc"`,
+    },
 ];
 
 ruleTester.run('no-template-children', rule, {
