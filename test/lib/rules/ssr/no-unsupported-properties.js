@@ -6,11 +6,11 @@
  */
 'use strict';
 
-const { testRule } = require('../shared');
+const { testRule } = require('../../shared');
 
 // TODO: Type assertions break this rule
 
-testRule('no-unsupported-ssr-properties', {
+testRule('ssr/no-unsupported-properties', {
     valid: [
         {
             code: `

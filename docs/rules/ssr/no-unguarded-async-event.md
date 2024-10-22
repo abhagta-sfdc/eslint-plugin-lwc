@@ -67,7 +67,7 @@ It is recommended to enable this rule to ensure that async operations and event 
 ```json
 {
     "rules": {
-        "ssr-no-unguarded-async-event": [
+        "@lwc/lwc/ssr/no-unguarded-async-event": [
             "error",
             {
                 "additional-async-operations": ["myCustomAsyncFunction"],

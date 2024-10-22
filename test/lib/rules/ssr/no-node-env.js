@@ -6,11 +6,11 @@
  */
 'use strict';
 
-const { testRule } = require('../shared');
+const { testRule } = require('../../shared');
 
 // TODO: Type assertions break this rule
 
-testRule('no-node-env-in-ssr', {
+testRule('ssr/no-node-env', {
     valid: [
         {
             code: `

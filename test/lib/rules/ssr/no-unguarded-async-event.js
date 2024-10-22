@@ -6,9 +6,9 @@
  */
 'use strict';
 
-const { testRule, testTypeScript } = require('../shared');
+const { testRule, testTypeScript } = require('../../shared');
 
-testRule('ssr-no-unguarded-async-event', {
+testRule('ssr/no-unguarded-async-event', {
     valid: [
         {
             code: `if (!import.meta.env.SSR) { fetch('/api/data'); }`,
@@ -83,7 +83,7 @@ testRule('ssr-no-unguarded-async-event', {
     ],
 });
 
-testTypeScript('ssr-no-unguarded-async-event', {
+testTypeScript('ssr/no-unguarded-async-event', {
     valid: [
         {
             code: `if (!import.meta.env.SSR) { fetch('/api/data'); }`,
