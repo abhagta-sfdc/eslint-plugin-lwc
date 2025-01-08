@@ -14,12 +14,24 @@ testRule('ssr/ssr-no-host-mutation-in-connected-callback', {
             code: `
                 import { LightningElement } from 'lwc';
                 export default class Cmp extends LightningElement {
+                    connectedCallback() {
+                        this.classList.add(\`my-child-needs-\${this.fromOutside}\`);
+                    }
+                }
+            `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-non-ssr/cmp.js',
+        },
+        {
+            code: `
+                import { LightningElement } from 'lwc';
+                export default class Cmp extends LightningElement {
                     @api fromOutside;
                     get theClassMyChildNeeds() {
                         return \`my-child-needs-\${this.fromOutside}\`;
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -31,6 +43,7 @@ testRule('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -43,6 +56,7 @@ testRule('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -55,6 +69,7 @@ testRule('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
             errors: [
                 {
                     message: 'Mutations to the host element in connectedCallback are not allowed.',
@@ -70,6 +85,7 @@ testRule('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
             errors: [
                 {
                     message: 'Mutations to the host element in connectedCallback are not allowed.',
@@ -91,6 +107,7 @@ testTypeScript('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -102,6 +119,7 @@ testTypeScript('ssr/ssr-no-host-mutation-in-connected-callback', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -119,6 +137,7 @@ testTypeScript('ssr/ssr-no-host-mutation-in-connected-callback', {
                     message: 'Mutations to the host element in connectedCallback are not allowed.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -134,6 +153,7 @@ testTypeScript('ssr/ssr-no-host-mutation-in-connected-callback', {
                     message: 'Mutations to the host element in connectedCallback are not allowed.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

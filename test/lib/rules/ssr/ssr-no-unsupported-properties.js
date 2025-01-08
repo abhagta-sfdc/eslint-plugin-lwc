@@ -14,6 +14,23 @@ testRule('ssr/ssr-no-unsupported-properties', {
     valid: [
         {
             code: `
+            import { LightningElement } from 'lwc';
+
+            export default class Foo extends LightningElement {
+              connectedCallback() {
+                this.childNodes.item(0).textContent = 'foo';
+              }
+            }
+        `,
+            errors: [
+                {
+                    messageId: 'propertyAccessFound',
+                },
+            ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-non-ssr/cmp.js',
+        },
+        {
+            code: `
                 import { LightningElement } from 'lwc';
                 import tmplA from './a.html';
 
@@ -29,6 +46,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -47,6 +65,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -65,6 +84,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -80,6 +100,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -93,6 +114,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -106,6 +128,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -125,6 +148,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -145,6 +169,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -165,6 +190,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -182,6 +208,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -205,6 +232,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -228,6 +256,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -251,6 +280,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -267,6 +297,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -283,6 +314,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -299,6 +331,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -315,6 +348,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -331,6 +365,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -347,6 +382,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -363,6 +399,7 @@ testRule('ssr/ssr-no-unsupported-properties', {
                     messageId: 'propertyAccessFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

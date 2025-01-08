@@ -14,6 +14,17 @@ testRule('ssr/ssr-no-node-env', {
     valid: [
         {
             code: `
+        import { LightningElement } from 'lwc';
+        import tmplA from './a.html';
+
+        export default class Foo extends LightningElement {
+          foo = process.env.NODE_ENV;              
+        }
+    `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-non-ssr/cmp.js',
+        },
+        {
+            code: `
                 import { LightningElement } from 'lwc';
                 import tmplA from './a.html';
 
@@ -33,6 +44,7 @@ testRule('ssr/ssr-no-node-env', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -53,6 +65,7 @@ testRule('ssr/ssr-no-node-env', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -68,6 +81,7 @@ testRule('ssr/ssr-no-node-env', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -89,6 +103,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -111,6 +126,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -128,6 +144,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -151,6 +168,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -174,6 +192,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -197,6 +216,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -216,6 +236,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -236,6 +257,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -251,6 +273,7 @@ testRule('ssr/ssr-no-node-env', {
                     messageId: 'nodeEnvFound',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

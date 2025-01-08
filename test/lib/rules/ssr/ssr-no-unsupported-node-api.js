@@ -17,6 +17,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                     // Safe code
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -25,6 +26,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                 fs.writeFileSync('file.txt', 'data');
             }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -47,6 +49,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                     line: 5,
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -58,6 +61,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                         'The unsupported Node API calls are not allowed in SSR-able components.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -78,6 +82,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                     line: 5,
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -89,6 +94,7 @@ testRule('ssr/ssr-no-unsupported-node-api', {
                         'The unsupported Node API calls are not allowed in SSR-able components.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });
@@ -102,6 +108,7 @@ testTypeScript('ssr/ssr-no-unsupported-node-api', {
                     // Safe code
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -124,6 +131,7 @@ testTypeScript('ssr/ssr-no-unsupported-node-api', {
                     line: 5,
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -144,6 +152,7 @@ testTypeScript('ssr/ssr-no-unsupported-node-api', {
                     line: 5,
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -155,6 +164,7 @@ testTypeScript('ssr/ssr-no-unsupported-node-api', {
                         'The unsupported Node API calls are not allowed in SSR-able components.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

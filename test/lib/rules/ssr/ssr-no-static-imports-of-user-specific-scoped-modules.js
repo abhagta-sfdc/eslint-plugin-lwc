@@ -16,6 +16,7 @@ testRule('ssr/ssr-no-static-imports-of-user-specific-scoped-modules', {
                    class MyComponent extends LightningElement {
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -35,6 +36,7 @@ testRule('ssr/ssr-no-static-imports-of-user-specific-scoped-modules', {
                         'Static import of @salesforce user-specific scoped modules is not allowed in SSR-able components. The recommended declarative solution is to use a data provider to fetch this information.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });
@@ -42,11 +44,24 @@ testRule('ssr/ssr-no-static-imports-of-user-specific-scoped-modules', {
 testTypeScript('ssr/ssr-no-static-imports-of-user-specific-scoped-modules', {
     valid: [
         {
+            code: `
+                import userId from '@salesforce/user/Id';
+
+                export default class Foo extends LightningElement {
+                    connectedCallback() {
+                        console.log(userId);
+                    }
+                }
+            `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-non-ssr/cmp.js',
+        },
+        {
             code: `import { LightningElement } from 'lwc';
                    
                    class MyComponent extends LightningElement {
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -66,6 +81,7 @@ testTypeScript('ssr/ssr-no-static-imports-of-user-specific-scoped-modules', {
                         'Static import of @salesforce user-specific scoped modules is not allowed in SSR-able components. The recommended declarative solution is to use a data provider to fetch this information.',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

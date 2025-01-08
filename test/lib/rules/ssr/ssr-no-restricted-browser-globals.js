@@ -29,6 +29,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -47,6 +48,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -65,6 +67,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -80,6 +83,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -98,6 +102,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -116,6 +121,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -137,6 +143,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -150,6 +157,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -163,6 +171,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -176,9 +185,10 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
-        { code: `const f = new Foo();` },
-        { code: `const name = new Foo();` },
+        { code: `const f = new Foo();`, filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js' },
+        { code: `const name = new Foo();`, filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js' },
         {
             code: `
               let screen = 'mobile';
@@ -189,6 +199,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -201,6 +212,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -211,12 +223,15 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `btoa('lwc');`,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `document`,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
             options: [{ 'restricted-globals': { document: false } }],
         },
         {
@@ -227,6 +242,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
               foo = globalThis.document?.x;
             }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -238,6 +254,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
               }
             }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -249,6 +266,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -260,6 +278,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                 }
               }
           `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -271,6 +290,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -282,6 +302,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -293,6 +314,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -304,6 +326,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -318,6 +341,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                   }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -329,6 +353,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     messageId: 'prohibitedBrowserAPIUsage',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -341,6 +366,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     messageId: 'prohibitedBrowserAPIUsage',
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -356,6 +382,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -377,6 +404,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -397,6 +425,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -417,6 +446,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -437,6 +467,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -455,6 +486,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'foo' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -476,6 +508,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'bar' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -497,6 +530,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'window' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -515,6 +549,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'window' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
 
         {
@@ -535,6 +570,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -554,6 +590,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -573,6 +610,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -591,6 +629,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -606,6 +645,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -621,6 +661,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document', property: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -638,6 +679,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document', property: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -653,6 +695,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location', property: 'href' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -668,6 +711,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location', property: 'href' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -685,6 +729,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location', property: 'href' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -702,6 +747,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -719,6 +765,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -736,6 +783,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'document', property: 'addEventListener' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -753,6 +801,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'addEventListener' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -770,6 +819,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'name' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -787,6 +837,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -804,6 +855,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location', property: 'href' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -821,6 +873,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'location', property: 'href' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -840,6 +893,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'fuzzAround' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `addEventListener('resize', () => {});`,
@@ -849,6 +903,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'addEventListener' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -862,6 +917,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'x' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -878,6 +934,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'Element' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -891,6 +948,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'Element' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
         {
             code: `
@@ -908,6 +966,7 @@ testRule('ssr/ssr-no-restricted-browser-globals', {
                     data: { identifier: 'Response' },
                 },
             ],
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
 });

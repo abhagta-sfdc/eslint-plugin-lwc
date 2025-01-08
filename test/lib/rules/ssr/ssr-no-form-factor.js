@@ -16,6 +16,20 @@ testRule('ssr/ssr-no-form-factor', {
                    class MyComponent extends LightningElement {
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
+        },
+        {
+            code: `
+                import { LightningElement } from 'lwc';
+                import { formFactor } from '@salesforce/client/formFactor';
+
+                export default class MyComponent extends LightningElement {
+                    connectedCallback() {
+                        console.log(formFactor);
+                    }
+                }
+            `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-without-xml/cmp.js',
         },
     ],
     invalid: [
@@ -30,6 +44,7 @@ testRule('ssr/ssr-no-form-factor', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
             errors: [
                 {
                     message:
@@ -43,11 +58,25 @@ testRule('ssr/ssr-no-form-factor', {
 testTypeScript('ssr/ssr-no-form-factor', {
     valid: [
         {
+            code: `
+                import { LightningElement } from 'lwc';
+                import { formFactor } from '@salesforce/client/formFactor';
+
+                export default class MyComponent extends LightningElement {
+                    connectedCallback() {
+                        console.log(formFactor);
+                    }
+                }
+            `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-non-ssr/cmp.js',
+        },
+        {
             code: `import { LightningElement } from 'lwc';
                    
                    class MyComponent extends LightningElement {
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
         },
     ],
     invalid: [
@@ -62,6 +91,7 @@ testTypeScript('ssr/ssr-no-form-factor', {
                     }
                 }
             `,
+            filename: 'test/lib/rules/ssr/fixtures/cmp-ssr/cmp.js',
             errors: [
                 {
                     message:
